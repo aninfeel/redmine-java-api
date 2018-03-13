@@ -54,6 +54,7 @@ public class Issue implements Identifiable {
     public final static Property<Version> TARGET_VERSION = new Property<>(Version.class, "targetVersion");
     public final static Property<IssueCategory> ISSUE_CATEGORY = new Property<>(IssueCategory.class, "issueCategory");
     public final static Property<Boolean> PRIVATE_ISSUE = new Property<>(Boolean.class, "privateIssue");
+    public final static Property<Integer> K3_ID = new Property<>(Integer.class, "k3_id");
 
     /**
      * can't have two custom fields with the same ID in the collection, that's why it is declared
@@ -279,6 +280,14 @@ public class Issue implements Identifiable {
 
     public void setStatusName(String statusName) {
         storage.set(STATUS_NAME, statusName);
+    }
+    
+    public Integer getK3Id() {
+        return storage.get(K3_ID);
+    }
+
+    public void setStatusName(Integer k3Id) {
+        storage.set(K3_ID, k3Id);
     }
 
     /**
